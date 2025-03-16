@@ -211,7 +211,7 @@ class AutoEmailReport(Document):
 	def prepare_dynamic_filters(self):
 		self.filters = frappe.parse_json(self.filters)
 
-		to_date = today()
+		to_date = getdate(today())
 
 		if self.use_first_day_of_period:
 			from_date = to_date
